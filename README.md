@@ -3,10 +3,12 @@ Take and send photo every hour(minute, day ,month, year) to a specific gmail add
 
 APPLICATION IS BASED/EXTENDED from Android exmaple RepeatingAlarm 
 
+<pre><code>
+
 Consfiguration is in : base-strings.xml
 
 STARTUP SETTINGS
-<pre><code>
+
  &lt;string name="startup_register"&gt;ON&lt;/string&gt; - when set to ON the application will Activate/Set the alarm automaticaluy without human intervention. Any other value will require the alarm to set Activate/Set using the UI - after first time the alarm will be active until application is killed/stopped from android device settings.
 
  &lt;string name="startup_on_boot"&gt;ON&lt;/string&gt; - when set to ON the application will start automaticaly after boot. Any other value will require manual start of the application.
