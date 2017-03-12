@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright 2013 The Android Open Source Project
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+<resources>
+    <string name="app_name">RepeatingAlarm</string>
+    <string name="intro_message">
+        <![CDATA[
+        
+            
+                Take and send photo every hour to a specific email address.
+            
+        
+        ]]>
+    </string>
+    <string name="email_user_name">sy.alfil.sl34@gmail.com</string>
+    <string name="email_user_password">password</string>
+    <string name="image_prefix">ALFIL_</string>
+    <string name="image_preview_size">1920x1080</string>
+    <string name="image_picture_size">2560x1920</string>
+    <string name="image_picture_format">jpeg</string>
+    <string name="image_jpeg_quality">85</string>
+    <string name="image_orientation">landscape</string>
+    <string name="image_rotation">0</string>
+    <string name="image_flash_mode">off</string>
+    <string name="image_iso_speed">auto</string>
+    <string name="image_whitebalance">auto</string>
+    <string name="image_scene_mode">auto</string>
+    <string name="image_focus_mode">continuous-picture</string>
+
+    <string name="image_timestamp_format">yyyyMMdd_HH</string>
+
+    <string name="camera_name">CAMERA</string>
+    <string name="minitor_name">MONITOR</string>
+
+    <string name="startup_register">ON</string>
+
+    <string name="startup_on_boot">ON</string>
+</resources>
