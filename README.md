@@ -7,25 +7,25 @@ Consfiguration is in : base-strings.xml
 
 STARTUP SETTINGS
 <pre><code>
- <string name="startup_register">ON</string> - when set to ON the application will Activate/Set the alarm automaticaluy without human intervention. Any other value will require the alarm to set Activate/Set using the UI - after first time the alarm will be active until application is killed/stopped from android device settings.
+ &lt;string name="startup_register"&gt;ON&lt;/string&gt; - when set to ON the application will Activate/Set the alarm automaticaluy without human intervention. Any other value will require the alarm to set Activate/Set using the UI - after first time the alarm will be active until application is killed/stopped from android device settings.
 
- <string name="startup_on_boot">ON</string> - when set to ON the application will start automaticaly after boot. Any other value will require manual start of the application.
+ &lt;string name="startup_on_boot"&gt;ON&lt;/string&gt; - when set to ON the application will start automaticaly after boot. Any other value will require manual start of the application.
  
 GMAIL SETTINGS
 
-<string name="email_user_name">sy.alfil.sl34@gmail.com</string> user name/email in gmail on which behalf the emails will be sent and will receice the emails also.
+&lt;string name="email_user_name"&gt;sy.alfil.sl34@gmail.com&lt;/string&gt; user name/email in gmail on which behalf the emails will be sent and will receice the emails also.
 
-<string name="email_user_password">password</string> password for the gmail account
+&lt;string name="email_user_password"&gt;password&lt;/string&gt; password for the gmail account
 
 Subject of the email will have the following format : CEMARA timestamp e.g. : CAMERA 20170312_16
 The camera text can be changed from the following setting :
 
-<string name="camera_name">CAMERA</string>
+&lt;string name="camera_name"&gt;CAMERA&lt;/string&gt;
 
 Image file name  will have the following format : PREFIX+timestamp e.g. : ALFIL_20170312_16
 The prefix can be changes from the following setting:
 
- <string name="image_prefix">ALFIL_</string>
+ &lt;string name="image_prefix"&gt;ALFIL_&lt;/string&gt;
 
 !!!IMPORTANT!!!
 In order he email sending to work you need to set in your google account lesser security apps to ON e.g. :
@@ -36,23 +36,23 @@ IMAGE SETTINGS
 
 Depending on your device camera you can use the following settings
 
-<string name="image_preview_size">1920x1080</string>
-<string name="image_picture_size">2560x1920</string>
-<string name="image_picture_format">jpeg</string>
-<string name="image_jpeg_quality">85</string>
-<string name="image_orientation">landscape</string>
-<string name="image_rotation">0</string>
-<string name="image_flash_mode">off</string>
-<string name="image_iso_speed">auto</string>
-<string name="image_whitebalance">auto</string>
-<string name="image_scene_mode">auto</string>
-<string name="image_focus_mode">continuous-picture</string>
+&lt;string name="image_preview_size"&gt;1920x1080&lt;/string&gt;
+&lt;string name="image_picture_size"&gt;2560x1920&lt;/string&gt;
+&lt;string name="image_picture_format"&gt;jpeg&lt;/string&gt;
+&lt;string name="image_jpeg_quality"&gt;85&lt;/string&gt;
+&lt;string name="image_orientation"&gt;landscape&lt;/string&gt;
+&lt;string name="image_rotation"&gt;0&lt;/string&gt;
+&lt;string name="image_flash_mode"&gt;off&lt;/string&gt;
+&lt;string name="image_iso_speed"&gt;auto&lt;/string&gt;
+&lt;string name="image_whitebalance"&gt;auto&lt;/string&gt;
+&lt;string name="image_scene_mode"&gt;auto&lt;/string&gt;
+&lt;string name="image_focus_mode"&gt;continuous-picture&lt;/string&gt;
 
 TIME INTERVAL SETTING
 
 The interval in which the images are taken and sent to the email is controlled from teh following setting:
 
- <string name="image_timestamp_format">yyyyMMdd_HH</string>
+ &lt;string name="image_timestamp_format"&gt;yyyyMMdd_HH&lt;/string&gt;
  
  every minute (once per minute) : yyyyMMdd_HHmm
  every hour (once per hour) : yyyyMMdd_HH
@@ -61,7 +61,6 @@ The interval in which the images are taken and sent to the email is controlled f
  every year(once per year) : yyyy
  
  
-</code>
-</pre>
+ </code></pre>
  
  
