@@ -3,6 +3,8 @@ Take and send photo every hour(minute, day ,month, year) to a specific gmail add
 
 APPLICATION IS BASED/EXTENDED from Android exmaple RepeatingAlarm 
 
+(third party jars required : activation.jar,  additionnal.jar, mail.jar - already included in Application/libs)
+
 <pre><code>
 
 Consfiguration is in : base-strings.xml
