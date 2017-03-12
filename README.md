@@ -6,7 +6,7 @@ APPLICATION IS BASED/EXTENDED from Android exmaple RepeatingAlarm
 Consfiguration is in : base-strings.xml
 
 STARTUP SETTINGS
-<code>
+<div>
  <string name="startup_register">ON</string> - when set to ON the application will Activate/Set the alarm automaticaluy without human intervention. Any other value will require the alarm to set Activate/Set using the UI - after first time the alarm will be active until application is killed/stopped from android device settings.
 
  <string name="startup_on_boot">ON</string> - when set to ON the application will start automaticaly after boot. Any other value will require manual start of the application.
@@ -61,6 +61,6 @@ The interval in which the images are taken and sent to the email is controlled f
  every year(once per year) : yyyy
  
  
-</code>
+</div>
  
  
