@@ -23,6 +23,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Environment;
+import android.os.Handler;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
@@ -170,9 +171,19 @@ public class CameraActivity extends SampleActivityBase {
                 LockCamera();
 
                 Log.i(TAG, "Camera/Take pucture");
+
                 camera.takePicture(null, null, pictureCallback);
 
-                Log.i(TAG, "Camera/Pucture sheduled");
+                // some devices may need time to adjust
+
+               // new Handler().postDelayed(new Runnable() {
+               //     @Override
+               //     public void run() {
+               //         camera.takePicture(null, null, pictureCallback);
+               //     }
+               // }, 1000);
+
+                Log.i(TAG, "Camera/Pucture scheduled");
             } catch (Exception ex) {
                 if (camera != null) {
                     try {
