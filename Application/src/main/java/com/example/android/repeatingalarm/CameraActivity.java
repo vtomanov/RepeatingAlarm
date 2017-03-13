@@ -162,19 +162,75 @@ public class CameraActivity extends SampleActivityBase {
             //    Log.d(TAG, tokenizer.nextToken());
             //}
 
-            Log.i(TAG, "Camera/Start preview");
-            camera.startPreview();
+            try {
+                Log.i(TAG, "Camera/Start preview");
+                camera.startPreview();
 
-            Log.i(TAG, "Camera/Take pucture");
-            camera.takePicture(null, null, pictureCallback);
+                UnLockCamera();
+                LockCamera();
 
-            Log.i(TAG, "Camera/Pucture sheduled");
-        } catch (Exception e) {
-            Log.e(TAG, "Camera/Cannot find camera");
-            if (camera != null) {
-                camera.release();
+                Log.i(TAG, "Camera/Take pucture");
+                camera.takePicture(null, null, pictureCallback);
+
+                Log.i(TAG, "Camera/Pucture sheduled");
+            } catch (Exception ex) {
+                if (camera != null) {
+                    try {
+                        Log.i(TAG, "Camera/Stop preview");
+                        camera.stopPreview();
+                        Log.i(TAG, "Camera/Preview stopped");
+                    } catch (Exception exe) {
+                        Log.e(TAG, "Camera/Cannot stop preview");
+                    }
+
+                    try {
+                        Log.i(TAG, "Camera/Release ");
+                        camera.release();
+                        Log.i(TAG, "Camera/Released");
+                    } catch (Exception exe) {
+                        Log.e(TAG, "Camera/Cannot be released");
+                    }
+
+                    camera = null;
+                }
+
             }
+        } catch (Exception e) {
+            Log.e(TAG, "Camera/Cannot be aquired");
+            try {
+                Log.i(TAG, "Camera/Release ");
+                camera.release();
+                Log.i(TAG, "Camera/Released");
+            } catch (Exception ex) {
+                Log.e(TAG, "Camera/Cannot be released");
+            }
+
+            camera = null;
         }
+    }
+
+    private void LockCamera(){
+        //stop auto white balance and auto exposure lock
+        Camera.Parameters params = camera.getParameters();
+        if (params.isAutoExposureLockSupported()) {
+            params.setAutoExposureLock (true);
+        }
+        if (params.isAutoWhiteBalanceLockSupported()) {
+            params.setAutoWhiteBalanceLock(true);
+        }
+        camera.setParameters(params);
+    }
+
+    private void UnLockCamera(){
+        //stop auto white balance and auto exposure lock
+        Camera.Parameters params = camera.getParameters();
+        if (params.isAutoExposureLockSupported()) {
+            params.setAutoExposureLock (false);
+        }
+        if (params.isAutoWhiteBalanceLockSupported()) {
+            params.setAutoWhiteBalanceLock(false);
+        }
+        camera.setParameters(params);
     }
 
     public boolean isOnline() {
@@ -217,13 +273,18 @@ public class CameraActivity extends SampleActivityBase {
                         Log.i(TAG, "Camera/Image file closed");
                     } catch (IOException ex) {
                         Log.e(TAG, "Camera/Cannot close image file");
-                        return;
                     }
 
                     if (camera != null) {
-                        Log.i(TAG, "Camera/Release camera");
-                        camera.release();
-                        Log.i(TAG, "Camera/Camera released");
+                        try {
+                            Log.i(TAG, "Camera/Release ");
+                            camera.release();
+                            Log.i(TAG, "Camera/Released");
+                        } catch (Exception ex) {
+                            Log.e(TAG, "Camera/Cannot be released");
+                        }
+
+                        camera = null;
                     }
 
                 }
