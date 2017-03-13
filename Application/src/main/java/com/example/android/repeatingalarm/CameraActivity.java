@@ -170,20 +170,9 @@ public class CameraActivity extends SampleActivityBase {
                 UnLockCamera();
                 LockCamera();
 
-                Log.i(TAG, "Camera/Take pucture");
-
-                camera.takePicture(null, null, pictureCallback);
-
-                // some devices may need time to adjust
-
-               // new Handler().postDelayed(new Runnable() {
-               //     @Override
-               //     public void run() {
-               //         camera.takePicture(null, null, pictureCallback);
-               //     }
-               // }, 1000);
-
-                Log.i(TAG, "Camera/Pucture scheduled");
+                Log.i(TAG, "Camera/Autofocus");
+                camera.autoFocus(autoFocusCallBack);
+                Log.i(TAG, "Camera/Autofocus scheduled");
             } catch (Exception ex) {
                 if (camera != null) {
                     try {
@@ -220,11 +209,11 @@ public class CameraActivity extends SampleActivityBase {
         }
     }
 
-    private void LockCamera(){
+    private void LockCamera() {
         //stop auto white balance and auto exposure lock
         Camera.Parameters params = camera.getParameters();
         if (params.isAutoExposureLockSupported()) {
-            params.setAutoExposureLock (true);
+            params.setAutoExposureLock(true);
         }
         if (params.isAutoWhiteBalanceLockSupported()) {
             params.setAutoWhiteBalanceLock(true);
@@ -232,11 +221,11 @@ public class CameraActivity extends SampleActivityBase {
         camera.setParameters(params);
     }
 
-    private void UnLockCamera(){
+    private void UnLockCamera() {
         //stop auto white balance and auto exposure lock
         Camera.Parameters params = camera.getParameters();
         if (params.isAutoExposureLockSupported()) {
-            params.setAutoExposureLock (false);
+            params.setAutoExposureLock(false);
         }
         if (params.isAutoWhiteBalanceLockSupported()) {
             params.setAutoWhiteBalanceLock(false);
@@ -253,6 +242,15 @@ public class CameraActivity extends SampleActivityBase {
         }
         return false;
     }
+
+    private Camera.AutoFocusCallback autoFocusCallBack = new Camera.AutoFocusCallback() {
+        @Override
+        public void onAutoFocus(boolean success, Camera camera) {
+            Log.i(TAG, "Camera/Take pucture");
+            camera.takePicture(null, null, pictureCallback);
+            Log.i(TAG, "Camera/Pucture scheduled");
+        }
+    };
 
     private Camera.PictureCallback pictureCallback = new Camera.PictureCallback() {
         public void onPictureTaken(byte[] imageData, Camera c) {
