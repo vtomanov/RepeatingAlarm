@@ -167,9 +167,6 @@ public class CameraActivity extends SampleActivityBase {
                 Log.i(TAG, "Camera/Start preview");
                 camera.startPreview();
 
-                UnLockCamera();
-                LockCamera();
-
                 Log.i(TAG, "Camera/Autofocus");
                 camera.autoFocus(autoFocusCallBack);
                 Log.i(TAG, "Camera/Autofocus scheduled");
@@ -246,6 +243,13 @@ public class CameraActivity extends SampleActivityBase {
     private Camera.AutoFocusCallback autoFocusCallBack = new Camera.AutoFocusCallback() {
         @Override
         public void onAutoFocus(boolean success, Camera camera) {
+
+            Log.i(TAG, "Camera/Lock camera");
+            LockCamera();
+
+            Log.i(TAG, "Camera/Unlock camera");
+            UnLockCamera();
+
             Log.i(TAG, "Camera/Take pucture");
             camera.takePicture(null, null, pictureCallback);
             Log.i(TAG, "Camera/Pucture scheduled");
